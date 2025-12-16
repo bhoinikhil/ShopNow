@@ -1,0 +1,3 @@
+
+db.json run command- npx json-server db.json --port 2031
+Json-server port no:2031

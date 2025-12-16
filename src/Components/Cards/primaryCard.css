@@ -1,0 +1,47 @@
+/* media - 751 btn font size reduce  */
+
+.PrimaryCard {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.productName {
+    font-size: 2rem;
+}
+
+.primaryCardImgSec {
+    width: 100%;
+    height: 68%;
+    padding-bottom: 3px;
+}
+
+.primaryCardImgSec img {
+    width: 100%;
+    height: 100%;
+}
+
+.primaryBody {
+    font-size: 0.87rem;
+    width: 100%;
+    height: 30%;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width: 431px) {
+    .PrimaryCard {
+        height: 200px;
+    }
+
+    .productName {
+        font-size: 0.87rem;
+
+    }
+
+    .btn-primary {
+        font-size: 0.50rem;
+    }
+
+}

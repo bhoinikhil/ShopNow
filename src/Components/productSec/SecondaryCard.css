@@ -1,0 +1,45 @@
+.SecondaryCard{
+    width: 320px;
+    height: 450px;
+    overflow: hidden;
+    
+    
+}
+.imgSec{
+    height: 200px;
+    
+}
+.no-underline {
+  text-decoration: none;
+}
+
+.font{
+    font-size: 0.80rem !important;
+}
+.font-title{
+    font-size: 0.97rem;
+}
+
+
+.imgSec img{
+    width: 100%;
+    height: 100%;
+}
+.brandName{
+    color: black;
+}
+.titleName{
+    font-weight: 600;
+}
+.price-sec{
+    align-items: center;
+}
+.price{
+    font-weight: 600;
+}
+.mrp{
+        text-decoration-line: line-through;    
+}
+.delivery, .discount{
+    font-weight: 600;
+}
