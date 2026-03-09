@@ -15,8 +15,6 @@ function MyNavbar({cartId}) {
  const[search,setSearch] =useState("")
 console.log();
 
-
-  // setSearch("nikhil")
   return (
     <>
       <Navbar expand="lg" className=" bg-primary navbar-dark ">

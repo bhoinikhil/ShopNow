@@ -13,7 +13,6 @@ const Cart = (props) => {
    // for MRP
   const totalMrp = addToCart.reduce((accumulator,item)=>{return accumulator + Number(item.mrp)},0)
  
-  
   return (
     <div>
        {/* Cards in cart section */}

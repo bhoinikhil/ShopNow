@@ -38,7 +38,6 @@ function App() {
   return (
     <div className='main-container bg-light p-0 overflow-hidden position-relative'>
         <BrowserRouter>
-    
           <MyNavbar cartId ={cartId} />
           <Routes>
             <Route path='/' element={<Home  product ={product} add={add} />} />

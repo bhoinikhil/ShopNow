@@ -98,7 +98,7 @@ function Product(){
             </div>
          </div>
 
-         <TrandingSec/>
+         {/* <TrandingSec/> */}
         </>
     )
 }
