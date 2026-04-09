@@ -13,11 +13,11 @@ function Footer() {
             <div className="col-12 col-sm-3">
                 <h3>Online Shopping</h3>
                 <ul >
-                    <li>Men</li>
-                    <li>Women</li>
-                    <li>Kids</li>
-                    <li>Electronics</li>
-                    <li>Home</li>
+                    <li><a href="/" className="text-light text-decoration-none">Home</a></li>
+                    <li><a href="/men" className="text-light text-decoration-none">Men</a></li>
+                    <li><a href="/women" className="text-light text-decoration-none">Women</a></li>
+                    <li><a href="/kids" className="text-light text-decoration-none">Kids</a></li>
+                    <li><a href="/about" className="text-light text-decoration-none">About</a></li>
                     <li>Login</li>
                     <li>SingUp</li>
                     

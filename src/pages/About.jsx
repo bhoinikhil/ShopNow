@@ -9,9 +9,9 @@ function About(){
         {/* Image Section */}
         <div className="col-md-6">
           <img
-            src="https://img.freepik.com/free-vector/online-shopping-concept-illustration_114360-1084.jpg"
+            src="../src/assets/shopnow.png"
             alt="Ecommerce"
-            className="img-fluid rounded shadow"
+            className="img-fluid rounded "
           />
         </div>
 

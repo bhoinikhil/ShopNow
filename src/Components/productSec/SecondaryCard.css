@@ -2,7 +2,7 @@
     width: 320px;
     height: 450px;
     overflow: hidden;
-    
+    background-color: red !important;
     
 }
 .imgSec{

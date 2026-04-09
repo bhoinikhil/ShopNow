@@ -1,14 +1,14 @@
 import { FaStar } from "react-icons/fa6";
 import { FaStarHalf } from "react-icons/fa6";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { BsCurrencyRupee } from "react-icons/bs";
 
-function Product(){
+function Product({add}){
     const{proId}=useParams();
     const[product,setProduct]= useState([]);
-    
+   
     const fetch= async()=>{
         const res = await axios.get(`http://localhost:2031/products/${proId}`)
         setProduct(res.data)
@@ -25,7 +25,13 @@ function Product(){
         return avg;
     }
   
-    
+     const[mainImage, setMainImage] = useState(product.image);
+
+     const navigate = useNavigate();
+    // const handleBuyNow= (product)=>{
+    //     Navigate(`/buyNow/${product.id}`)
+       
+    // }
     
     return(
         <>
@@ -37,22 +43,22 @@ function Product(){
                     <div className="row">
                         <div className="col-2  ">
                             <div className="row  p-2 ">
-                                <div className="col"><img src={product.image} alt="" className="w-100"  /></div>
+                                <div className="col" onClick={()=>{setMainImage(product.image)}}><img src={product.image} alt="" className="w-100"  /></div>
                             </div>
                             <div className="row  p-2">
-                                <div className="col"><img src={product.image2} alt=""  className="w-100" /></div>
+                                <div className="col" onClick={()=>{setMainImage(product.image2)}}><img src={product.image2} alt=""  className="w-100" /></div>
                             </div>
                             <div className="row  p-2">
-                                <div className="col"><img src={product.image3} alt="" className="w-100"  /></div>
+                                <div className="col" onClick={()=>{setMainImage(product.image3)}}><img src={product.image3} alt="" className="w-100"  /></div>
                             </div>
                         </div>
                         <div className="col-10  text-center">
-                            <img src={product.image} alt="" className=" productimage w-100"  />
+                            <img src={mainImage==undefined?product.image:mainImage} alt="" className=" productimage w-100"  />
                         </div>
                     </div>
                 </div>
                 {/* right section  */}
-                <div className="col-md-8 col-12  ps-3">
+                <div className="col-md-8 col-12  ps-3 ">
                     <div className="proInfo d-flex flex-column row-gap-2">
                         <div className="brand fs-6">{product.brand}</div>
                         <div className="title"><h3>{product.title}</h3></div>
@@ -70,13 +76,18 @@ function Product(){
                             <button className="btn btn-secondary p-1 px-3">XL</button>
                             <button className="btn btn-secondary p-1 px-3">XXL</button>
                         </div>
-                        <div className="about w-75">
+                        <div className="about w-100">
                             <h4>About this item</h4>
                             <p> {product.about} </p>
                         </div>
+                        <div className=" row mx-1">
+                            <div className="col-6"><div className="btn btn-primary rounded w-100 " onClick={()=>{add(product)}}>Add To Cart</div></div>
+                            <div className="col-6"><div className="btn btn-warning rounded w-100 " onClick={()=>navigate("/buyNow",{state: product})}>Buy Now</div></div>
+                            
+                        </div>
                         <div className="productDetails ">
                             <h4>Product Details</h4>
-                            <table className="table text-start w-sm-100 w-75 ">
+                            <table className="table text-start w-100  w-75 ">
                               <tbody>
                                 <tr >
                                     <th>Brand : </th>
@@ -93,12 +104,15 @@ function Product(){
                                 </tbody> 
                             </table>
                         </div>
+
+                        
                     </div>
                 </div>
+                
             </div>
          </div>
 
-         {/* <TrandingSec/> */}
+         {/* <TrandingSec/> 2 */}
         </>
     )
 }

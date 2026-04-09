@@ -11,7 +11,7 @@ function PrimaryCard(props) {
             </div>
             <div className="primaryBody text-center">
                 <span className="productName ">{props.obj.offer}</span>
-                <button className="btn btn-primary w-75 mx-auto mt-2  "> ADD TO CART</button>
+                <button className="btn w-75 mx-auto mt-2  "> ADD TO CART</button>
             </div>
            </div>
           </div>

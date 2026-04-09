@@ -19,12 +19,12 @@ const Cart = (props) => {
       { addToCart.length==0? <div className='text-center'> <h2 className='height'>Cart is Empty </h2></div> : 
          addToCart.map((ele, index) => {
           return (
-            <div key={index} className="container-fluid w-75 border mb-4 mt-2 shadow">
-              <div className="row p-1 m-1 ">
+            <div key={index} className="container-fluid w-100 border mb-4 mt-2 shadow">
+              <div className="row">
                 <div className="col-12 col-sm-3 mb-2 rounded">
                   <img src={ele.image} alt="" className="w-100 rounded" />
                 </div>
-                <div className="col-12 col-sm-9 ps-lg-5 position-relative">
+                <div className="col-12 col-sm-9 ps-lg-2 position-relative">
                   <p className='fs-6'>{ele.brand}</p>
                   <p className="fs-4 fw-bold ">{ele.title} </p>
                   <p>{ele.about}</p>
@@ -75,7 +75,7 @@ const Cart = (props) => {
                       <th className='p-2 text-end'> ₹{totalPrice}</th>
                     </tr>
                     <tr>
-                      <td colSpan={2} className='py-2 '> <div className="bg-info w-50 rounded mx-auto text-center">You'll save ₹{totalMrp - totalPrice}on this Order!</div></td>
+                      <td colSpan={2} className='py-2 '> <div className="bg-success w-75 rounded mx-auto text-center text-light">You'll save {totalMrp - totalPrice} ₹ on this Order!</div></td>
                     </tr>
                   </table>
                     

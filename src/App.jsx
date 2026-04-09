@@ -15,6 +15,7 @@ import { useEffect, useState } from 'react';
 import axios from "axios"
 import Cart from './pages/Cart.jsx';
 import Account from './pages/Account.jsx';
+import BuyNow from './pages/BuyNow.jsx';
 
 
 function App() {
@@ -36,9 +37,15 @@ function App() {
  }
 
   return (
-    <div className='main-container bg-light p-0 overflow-hidden position-relative'>
+    <div className='main-container  bg-light p-0 overflow-hidden position-relative'>
         <BrowserRouter>
+        <div className="row">
+          <div className="col-12">
           <MyNavbar cartId ={cartId} />
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12 px-0 ">
           <Routes>
             <Route path='/' element={<Home  product ={product} add={add} />} />
             <Route path='/men' element={<Men product ={product} add={add} />} />
@@ -48,8 +55,12 @@ function App() {
             <Route path='/account' element={<Account />} />
             <Route path='/seller' element={<Seller />} />
             <Route path='/cart' element={<Cart cartId={cartId} setCartId={setCartId}/>} />
-            <Route path='/product/:proId' element={<Product />} />
+            <Route path='/product/:proId' element={<Product add={add} />} />
+            <Route path='/buyNow/' element={<BuyNow />} />
           </Routes>
+
+          </div>
+        </div>
         </BrowserRouter>
       <Footer />
     </div>
